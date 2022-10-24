@@ -10,6 +10,6 @@ export default Component.extend({
     const categories = this.site.categories;
     const category = categories.find((c) => c.id === categoryId);
     this.set('category', category);
-    this.set('categoryColor', `background-color: #${category.color}`);
+    //this.set('categoryColor', `background-color: #${category.color}`);
   },
 });
