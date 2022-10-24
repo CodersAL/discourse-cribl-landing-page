@@ -18,9 +18,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .custom-search-banner-wrap {
+  .custom-search-banner,
+  .custom-search-banner-wrap
+  {
     padding: 2.5em 0 3em;
     margin: 1em auto;
+    max-width: inherit;
   }
 }
 
