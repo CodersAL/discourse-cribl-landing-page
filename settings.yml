@@ -1,0 +1,30 @@
+landing_banner_content:
+  textarea: true
+  description:
+    en: 'HTML markup declaring banner content'
+  default: |
+    <h1>SecOps Hub | A security operations community</h1>
+    <p>We're a community of security pros who discuss SecOps strategies and
+      automated incident response best practices. We help SecOps professionals get
+      started and get better at what they do. This is where we talk shop. We're
+      happy to have you!</p>
+    <p>Here are few steps to get you started.</p>
+    <ol>
+      <li><a href="#">Introduce Yourself</a></li>
+      <li><a href="#">Tell us</a> which repetitive tasks you'd like to stop doing.</li>
+      <li><a href="#">Vote</a> on your most needed integration.</li>
+    </ol>
+
+    <a href='#' class='landing-banner-btn'>Got It</a>
+announcements_topics_category:
+  type: list
+  list_type: category
+  default: ''
+  description:
+    en: 'Category to fetch topics from for the Announcements banner card'
+forum_leader_tips:
+  type: list
+  list_type: category
+  default: ''
+  description:
+    en: 'Category to fetch topics from for the Forum Leader Tips  banner card'

@@ -1,0 +1,13 @@
+en:
+  theme_metadata:
+    description: "Series of components that make up Cribl's community landing page."
+  landing_cards:
+    more: 'More'
+  leaderboard:
+    rank: 'Rank'
+    name: 'Name'
+    relative_rank: 'Relative Rank'
+    points: 'Current Score'
+    time_stamp: 'Time Stamp'
+    data_error: 'We are unable to fetch the leaderboard data at this time.'
+    login_error: "Please <a href='/login'>login</a> to view leaderboard results"

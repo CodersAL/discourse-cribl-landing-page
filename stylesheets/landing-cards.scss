@@ -1,0 +1,60 @@
+.cribl-landing-page .landing-cards {
+  // todo use variable
+  background: #f8f8f9;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 2rem;
+  padding: 3rem 2rem;
+
+  .landing-card {
+    // todo use variable
+    background: white;
+    border: 2px solid #f0f0f0;
+    padding: 2rem;
+    // width: calc(90vw / 2);
+    // min-width: calc(80vw / 2);
+    flex: 1;
+    border-radius: 5px;
+
+    &--header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-inline: 10px;
+
+      h3 {
+        font-weight: 300;
+        font-size: var(--font-up-2);
+      }
+
+      a {
+        // TODO use variable
+        color: #08aece;
+      }
+    }
+
+    &--topics {
+      .topic-list-body {
+        display: flex;
+        flex-direction: column;
+        border-top: none;
+      }
+
+      .topic-list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      // .title {
+      //   font-size: var(--font-up-1);
+      // }
+    }
+  }
+}

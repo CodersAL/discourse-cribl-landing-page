@@ -1,0 +1,50 @@
+<div class='landing-card--header'>
+  <h3>{{title}}</h3>
+  <a href='/c/{{category.id}}'>{{theme-i18n 'landing_cards.more'}}</a>
+</div>
+<div class='landing-card--topics'>
+  <table class='topic-list'>
+    <tbody class='topic-list-body'>
+      {{#each topics as |topic|}}
+        <tr class='topic-list-item'>
+          <td class='topic-list-data main-link'>
+            <span class='link-top-line'>
+              <a
+                href='/t/{{topic.id}}'
+                role='heading'
+                class='title raw-link raw-topic-link'
+                data-topic-id={{topic.id}}
+              >{{topic.title}}</a>
+            </span>
+            <div class='link-bottom-line'>
+              <a class='badge-wrapper bullet' href='/c/{{topic.category_id}}'>
+                <span class='badge-category-bg' style={{categoryColor}}></span>
+                <span
+                  data-drop-close='true'
+                  class='badge-category clear-badge'
+                  title={{topic.title}}
+                >
+                  <span class='category-name'>{{category.name}}</span>
+                </span>
+              </a>
+            </div>
+          </td>
+          <td class='num topic-list-data age activity'>
+            <a href='' class='post-activity'>
+              {{#if topic.last_posted_at}}
+                {{~format-date
+                  topic.last_posted_at
+                  format='tiny'
+                  noTitle='true'
+                ~}}
+              {{else}}
+                {{~format-date topic.created_at format='tiny' noTitle='true'~}}
+              {{/if}}
+
+            </a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

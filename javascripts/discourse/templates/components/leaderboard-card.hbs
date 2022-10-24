@@ -1,0 +1,71 @@
+<div class='landing-card--header'>
+  <h3>{{title}}</h3>
+  <a href='/cribl/leaderboard?page=0&period=today'>
+    {{theme-i18n 'landing_cards.more'}}
+  </a>
+</div>
+
+{{#if leaders}}
+  {{#conditional-loading-spinner condition=isLoading}}
+
+    <div class='landing-card--topics'>
+      <table class='table grid cribl-leaderboard-card'>
+        {{conditional-loading-spinner condition=isLoading}}
+        <thead>
+          {{table-header-toggle
+            field=(theme-i18n 'leaderboard.rank')
+            translated=true
+            automatic=false
+            class='field-rank'
+          }}
+          {{table-header-toggle
+            field=(theme-i18n 'leaderboard.name')
+            translated=true
+            automatic=true
+            class='field-name'
+          }}
+          {{table-header-toggle
+            field=(theme-i18n 'leaderboard.points')
+            translated=true
+            automatic=true
+            class='field-points'
+          }}
+        </thead>
+        <tbody>
+          {{#each leaders as |item|}}
+            <tr>
+              <td class='rank'>{{item.rank}}</td>
+
+              <td class='user-information'>
+                <a
+                  href={{item.user.path}}
+                  data-user-card={{item.user.username}}
+                >
+                  {{avatar item.user imageSize='medium'}}
+                  <div class='user-details'>
+                    <span class='name'>{{item.user.name}}</span>
+                    <span class='username'>{{item.user.username}}</span>
+                  </div>
+                </a>
+              </td>
+              <td class='points'>{{item.points}}</td>
+              <td class='timestamp'>
+                {{format-date item.timestamp format='tiny'}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{/conditional-loading-spinner}}
+{{/if}}
+
+{{#if dataFetchFailed}}
+  <p class='alert alert-error'>{{theme-i18n 'leaderboard.data_error'}}</p>
+{{/if}}
+
+{{#if notLoggedIn}}
+  <p class='alert alert-info'>{{html-safe
+      (theme-i18n 'leaderboard.login_error')
+    }}</p>
+{{/if}}

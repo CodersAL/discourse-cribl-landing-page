@@ -1,0 +1,53 @@
+@import 'landing-banner';
+@import 'landing-cards';
+@import 'header';
+@import 'search-banner';
+
+.cribl-landing-page {
+  margin-bottom: 2rem;
+}
+
+.cribl-leaderboard-card {
+  width: 100%;
+
+  .user-information a {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+
+    .user-details {
+      color: var(--primary-medium);
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-weight: bold;
+      }
+    }
+  }
+
+  th {
+    text-align: center;
+  }
+
+  th.field-name {
+    text-align: left;
+  }
+
+  tr {
+    height: 4.25em;
+
+    &:hover {
+      background: var(--primary-very-low);
+    }
+
+    td {
+      text-align: center;
+    }
+
+    td.user-information {
+      text-align: left;
+    }
+  }
+}

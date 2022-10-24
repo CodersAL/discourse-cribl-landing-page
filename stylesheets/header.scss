@@ -1,0 +1,60 @@
+// TODO move to theme/own component
+.d-header {
+  // TODO Use variable
+  background-color: #000d0d;
+  box-shadow: none;
+}
+
+.header-submenus {
+  .menu-items > .menu-item {
+    border-top: 0.25rem solid #000d0d;
+  }
+  .top-menu .menu-item {
+    font-size: var(--font-0);
+
+    .d-dropdown-menu {
+      margin-top: -0.25rem;
+      padding-block: 0.625rem;
+      padding-inline: 2.5rem;
+      box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.05);
+      border-radius: 0.1875rem;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      right: auto;
+      transform: translateX(-25%);
+    }
+
+    &:last-child {
+      .d-dropdown-menu {
+        transform: translateX(-80%);
+      }
+    }
+
+    .submenu-item {
+      width: 100%;
+      padding-block: 0.9375rem;
+    }
+
+    .submenu-item:not(:last-child) {
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    .d-icon-caret-right,
+    .d-icon-caret-down {
+      // TODO use variable
+      color: #00cccc;
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      border-top-color: #ff6600;
+      .d-icon-caret-right,
+      .d-icon-caret-down {
+        // TODO use variable
+        transform: rotate(270deg);
+        color: #000d0d;
+      }
+    }
+  }
+}

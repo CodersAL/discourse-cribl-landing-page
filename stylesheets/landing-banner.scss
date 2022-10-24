@@ -1,0 +1,101 @@
+.landing-banner {
+  display: flex;
+  align-items: stretch;
+  // TODO store color in variable
+  background: #eceff3;
+  padding-top: 2.6em;
+
+  @media screen and (min-width: 1000px) {
+  }
+
+  &-content {
+    align-self: center;
+    padding: 2em;
+
+    @media screen and (min-width: 1000px) {
+      padding: 0;
+    }
+
+    h1 {
+      // TODO store color in variable
+      color: #3e4e6b;
+      font-weight: 500;
+    }
+
+    p {
+      max-width: 1000px;
+    }
+
+    p,
+    li {
+      // TODO store color in variable
+      color: #818fa9;
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: cribl-counter;
+      margin-left: 0;
+
+      li {
+        counter-increment: cribl-counter;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: counter(cribl-counter);
+          margin-right: 0.5rem;
+          // TODO: Store in color variable
+          background: #808ea9;
+          padding: 3px;
+          line-height: 15px;
+          text-align: center;
+          width: 15px;
+          height: 15px;
+          display: inline-block;
+          // TODO: Store in color variable
+          color: white;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    li a {
+      // TODO: Store in color variable
+      color: #0b83ff;
+    }
+
+    a.landing-banner-btn {
+      // TODO: Store in color variable
+      background-color: #b32cda;
+      display: inline-block;
+      padding: 0.5em 1em;
+      margin-top: 0.5rem;
+      color: white;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.25);
+      transition: transform 0.25s ease, background-color 1s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        // TODO: Store in color variable
+        background-color: #8a23a8;
+      }
+    }
+  }
+
+  &-image {
+    @media screen and (min-width: 1000px) {
+      transform: translateX(-1em);
+      background-image: url($landingImage);
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 380px;
+      min-width: calc(100vw / 2.5);
+      max-width: 20vw;
+      height: 80%;
+      width: 80%;
+      clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);
+    }
+  }
+}
